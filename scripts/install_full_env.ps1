@@ -6,14 +6,14 @@ if (!(Test-Path $root)) {
 }
 
 #$bt_path = "$root\\BuildTools"
-$bt_path = "$root\\VSCppBuildTools"
+$bt_path = "$root\\PortableBuildTools"
 if (Test-Path $bt_path) {
     Write-Host "Portable Build Tools is already installed." -ForegroundColor Green
 } else {
     Write-Host "Installing Portable Build Tools in $bt_path"
     $url = "https://github.com/Data-Oriented-House/PortableBuildTools/releases/latest/download/PortableBuildTools.exe"
     $dst = "$root\\PortableBuildTools.exe"
-    Start-BitsTransfer -Source $url -Destination $dst -DisplayName "Downlaoding Portable Build Tools" -Description "Downloading Portable Build Tools..."
+    Start-BitsTransfer -Source $url -Destination $dst -DisplayName "Downloading Portable Build Tools" -Description "Downloading Portable Build Tools..."
     Start-Process -FilePath $dst -ArgumentList "cli accept_license install_path=$($bt_path)" -NoNewWindow -Wait
     Remove-Item -Path $dst -Force
 }
