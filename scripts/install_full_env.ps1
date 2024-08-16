@@ -1,25 +1,33 @@
-#$root = "C:\\ProgramVideoGames"
-$root = "E:\\Apps"
+# -----------------------------------------------------------------------------
+# Script Name: install_full_env.ps1
+# Description: This script is used to install the full environment ofr Odin language
+# -----------------------------------------------------------------------------
 
-if (!(Test-Path $root)) {
-    New-Item -Path "C:\" -Name "ProgramVideoGames" -ItemType Directory
+# Parse command line arguments
+param (
+    #[string]$install_path = "C:\\ProgramVideoGames"
+    [string]$install_path = "E:\\Apps"
+)
+
+if (!(Test-Path $install_path)) {
+    New-Item -Path $install_path -ItemType Directory
 }
 
-#$bt_path = "$root\\BuildTools"
-$bt_path = "$root\\PortableBuildTools"
+#$bt_path = "$install_path\\BuildTools"
+$bt_path = "$install_path\\PortableBuildTools"
 if (Test-Path $bt_path) {
     Write-Host "Portable Build Tools is already installed." -ForegroundColor Green
 } else {
     Write-Host "Installing Portable Build Tools in $bt_path"
     $url = "https://github.com/Data-Oriented-House/PortableBuildTools/releases/latest/download/PortableBuildTools.exe"
-    $dst = "$root\\PortableBuildTools.exe"
+    $dst = "$install_path\\PortableBuildTools.exe"
     Start-BitsTransfer -Source $url -Destination $dst -DisplayName "Downloading Portable Build Tools" -Description "Downloading Portable Build Tools..."
     Start-Process -FilePath $dst -ArgumentList "cli accept_license install_path=$($bt_path)" -NoNewWindow -Wait
     Remove-Item -Path $dst -Force
 }
 
-#$odin_path = "$root\\Odin"
-$odin_path = "$root\\_odin"
+#$odin_path = "$install_path\\Odin"
+$odin_path = "$install_path\\_odin"
 if (Test-Path "$odin_path\\odin.exe") {
     Write-Host "Odin is already installed." -ForegroundColor Green
 } else {
@@ -28,7 +36,7 @@ if (Test-Path "$odin_path\\odin.exe") {
     $res = Invoke-RestMethod -Uri $url
     foreach ($asset in $res.assets) {
         if ($asset.name -match "windows-amd64") {
-            $dst = "$root\\$($asset.name)"
+            $dst = "$install_path\\$($asset.name)"
             #if (!(Test-Path $dst)) {
             #    New-Item -Path $dst -ItemType Directory
             #}
