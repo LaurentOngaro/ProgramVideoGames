@@ -4,5 +4,8 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"editor.defaultFormatter": "DanielGavin.ols",
+		"github.copilot.editor.enableAutoCompletions": false
+	}
 }

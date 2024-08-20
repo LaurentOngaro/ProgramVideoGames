@@ -1,6 +1,11 @@
 {
   "$schema": "https://raw.githubusercontent.com/DanielGavin/ols/master/misc/ols.schema.json",
-  "collections": [],
+  "collections": [
+    {
+      "name": "core",
+      "path": "E:\\Apps\\_odin\\core"
+    }
+  ],
   "enable_format": true,
   "enable_hover": true,
   "enable_snippets": true,
@@ -16,13 +21,11 @@
   "verbose": false,
   "profiles": [
     {
-      "name": "default",
-      "checker_path": ["src"]
-    },
-    {
       "name": "windows_profile",
       "os": "windows",
-      "checker_path": ["src"]
+      "checker_path": [
+        "src"
+      ]
     }
   ],
   "profile": "windows_profile"
