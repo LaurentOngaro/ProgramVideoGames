@@ -1,11 +1,14 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"editor.defaultFormatter": "DanielGavin.ols",
-		"github.copilot.editor.enableAutoCompletions": false
-	}
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.defaultFormatter": "DanielGavin.ols",
+    "github.copilot.editor.enableAutoCompletions": false,
+    "[properties]": {
+      "editor.defaultFormatter": "lkrms.inifmt"
+    }
+  }
 }

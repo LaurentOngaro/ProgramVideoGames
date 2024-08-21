@@ -1,4 +1,4 @@
-# Godot_Skeleton
+# Odin_Skeleton
 
 ## Description
 
