@@ -1,5 +1,5 @@
 // Program Video Games first mini-course
-// Day 3: Simple collisions, multiple moving objects
+// Day 4: Handling Input, Reset, Ball Bounce
 // personnal version
 
 package main
