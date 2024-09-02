@@ -1,20 +1,17 @@
-# Odin_Skeleton
+# ODIN Pong
 
 ## Description
 
-Framework pour un projet utilisant le langage Odin (https://odin-lang.org), regroupant les fonctionnalités utiles à un projet de jeu vidéo ou d'application.
+Un jeu de pong simple pour apprendre le langage de programmation [Odin](https://odin-lang.org).
+Basé sur le cours gratuit [programvideogames](https://programvideogames.com/pong.html).
 
 ## Objectifs
 
-TODO
+Ne pas laisser passer la balle !
 
 ## Mouvements et actions du joueur
 
-TODO
-
-## Interactions
-
-TODO
+Utiliser les flèches du clavier ou ZQSD pour déplacer la raquette du joueur (située sur la gauche de l'écran).
 
 ## Copyrights
 
@@ -26,21 +23,20 @@ Développé en utilisant principalement Visual Studio Code.
 
 =================================================
 
+## ODIN Pong
+
 ## Description
 
-Framework for a project using the ODIN language (https://odin-lang.org), bringing together the useful features to a video game or application project.
+A simple pong game to learn the basic of the [Odin](https://odin-lang.org) programming language.
+Based on the free course [programvideogames] (https://programvideogames.com/pong.html).
 
 ## Goals
 
-TODO
+Do not let the ball pass!
 
-## Movements and actions of the player
+## Player movements and actions
 
-TODO
-
-## Interactions
-
-TODO
+Use the keyboard arrows or ZQSD to move the player paddle (located on the left of the screen).
 
 ## Copyrights
 

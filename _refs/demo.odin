@@ -35,8 +35,8 @@ import "core:math/big"
 	Nightly Builds - https://odin-lang.org/docs/nightly/
 		Get the latest nightly builds of Odin.
 	More Odin Examples - https://github.com/odin-lang/examples
-		This repository contains examples of how certain things can be accomplished 
-		in idiomatic Odin, allowing you learn its semantics, as well as how to use 
+		This repository contains examples of how certain things can be accomplished
+		in idiomatic Odin, allowing you learn its semantics, as well as how to use
 		parts of the core and vendor package collections.
 */
 
@@ -359,7 +359,7 @@ control_flow :: proc() {
 
 		if false {
 			f, err := os.open("my_file.txt")
-			if err != nil {
+			if err != os.ERROR_NONE {
 				// handle error
 			}
 			defer os.close(f)
@@ -1209,7 +1209,7 @@ threading_example :: proc() {
 
 
 		for i in 0..<30 {
-			// be mindful of the allocator used for tasks. The allocator needs to be thread safe, or be owned by the task for exclusive use 
+			// be mindful of the allocator used for tasks. The allocator needs to be thread safe, or be owned by the task for exclusive use
 			thread.pool_add_task(&pool, allocator=context.allocator, procedure=task_proc, data=nil, user_index=i)
 		}
 
