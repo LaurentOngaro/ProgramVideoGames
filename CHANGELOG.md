@@ -8,13 +8,13 @@ and this project adheres to
 
 ## 1.0.0 2024-09-02 : Finish !
 
-- Day 5 first part2: adding sounds and a new "boost" action
+- Day 5 part 2: adding sounds and a new "boost" action
 - rename Changelog.txt to Changelog.md
 - fix an issue with demo.odin
 
 ## 0.2.0 2024-08-20 : On the road again
 
-- Day 5 first part1: Putting It All Together: Building a Simple Game
+- Day 5 part 1: Putting It All Together: Building a Simple Game
 - adding AI opponent
 
 ## 0.2.0 2024-08-20 : Come on Baby
