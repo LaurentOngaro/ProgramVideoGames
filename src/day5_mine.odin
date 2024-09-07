@@ -76,14 +76,14 @@ main :: proc() {
   rl.InitAudioDevice()
 
   rl_assetsFolder :: cstring(assetsFolder) // we need a cstring to pass the value to the raylib functions
-  sfxHit := rl.LoadSound(rl_assetsFolder + "/sfx/hit.wav")
-  sfxWin := rl.LoadSound(rl_assetsFolder + "/sfx/win.wav")
-  sfxLose := rl.LoadSound(rl_assetsFolder + "/sfx/lose.wav")
+  soundHit := rl.LoadSound(rl_assetsFolder + "/sounds/hit.wav")
+  soundWin := rl.LoadSound(rl_assetsFolder + "/sounds/win.wav")
+  soundLose := rl.LoadSound(rl_assetsFolder + "/sounds/lose.wav")
 
   defer {
-    rl.UnloadSound(sfxWin)
-    rl.UnloadSound(sfxLose)
-    rl.UnloadSound(sfxHit)
+    rl.UnloadSound(soundWin)
+    rl.UnloadSound(soundLose)
+    rl.UnloadSound(soundHit)
     rl.CloseAudioDevice()
     rl.CloseWindow()
     fmt.printfln("Freeing loaded resources")
@@ -146,12 +146,12 @@ main :: proc() {
     // check win/lose conditions
     if nextBallRect.x >= gs.windowsSize.x - gs.ball.width {
       // CPU loses
-      rl.PlaySound(sfxWin)
+      rl.PlaySound(soundWin)
       gs.scorePlayer += 1
       reset(&gs)
     } else if nextBallRect.x < 0 {
       // player loses
-      rl.PlaySound(sfxLose)
+      rl.PlaySound(soundLose)
       gs.scoreCPU += 1
       reset(&gs)
     } else {
@@ -179,7 +179,7 @@ main :: proc() {
       gs.ballDirection = calculateBallDirection(nextBallRect, gs.CPUpaddle) or_else gs.ballDirection
       if oldBallDirection != gs.ballDirection {
         // the ball hit the Player OR the CPU paddle
-        rl.PlaySound(sfxHit)
+        rl.PlaySound(soundHit)
       }
       gs.ball.x += gs.ballDirection.x * gs.ballSpeed
       gs.ball.y += gs.ballDirection.y * gs.ballSpeed
