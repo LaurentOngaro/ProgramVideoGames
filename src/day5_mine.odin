@@ -44,26 +44,26 @@ srcFolder: string : "../../src"
 // Main entry point of the program
 main :: proc() {
   gs: gameState = {
-    fpsLimit = 60,
-    windowsSize = {1280, 720},
+    fpsLimit         = 60,
+    windowsSize      = {1280, 720},
     //
-    ball = {-1, -1, 30, 30}, // position will be set in reset
-    ballSpeed = 10,
+    ball             = {-1, -1, 30, 30}, // position will be set in reset
+    ballSpeed        = 10,
     //
-    paddle = {-1, -1, 20, 100}, // position will be set in reset
-    paddleSpeed = 10,
+    paddle           = {-1, -1, 20, 100}, // position will be set in reset
+    paddleSpeed      = 10,
     //
-    CPUpaddle = {-1, -1, 20, 100}, // position will be set in reset
+    CPUpaddle        = {-1, -1, 20, 100}, // position will be set in reset
     CPUreactionTimer = 0,
-    CPUtarget = {0, 0},
+    CPUtarget        = {0, 0},
     //change the following values to change the difficulty by making the CPU more or less efficient
-    CPUpaddleSpeed = 8,
-    CPUinaccuracy = 30,
+    CPUpaddleSpeed   = 8,
+    CPUinaccuracy    = 30,
     CPUreactionDelay = 0.1,
     //
-    scorePlayer = 0,
-    scoreCPU = 0,
-    boostTimer = 0,
+    scorePlayer      = 0,
+    scoreCPU         = 0,
+    boostTimer       = 0,
   }
 
   reset(&gs)

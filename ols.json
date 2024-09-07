@@ -21,12 +21,19 @@
   "verbose": false,
   "profiles": [
     {
-      "name": "windows_profile",
+      "name": "src_folder_profile",
       "os": "windows",
       "checker_path": [
         "src"
       ]
+    },
+    {
+      "name": "root_folder_profile",
+      "os": "windows",
+      "checker_path": [
+        "."
+      ]
     }
   ],
-  "profile": "windows_profile"
+  "profile": "src_folder_profile"
 }
